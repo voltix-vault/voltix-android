@@ -578,7 +578,7 @@ val expandedMontserratFamilyTypography = Typography(
     ),
     //equal  body1
     bodyLarge = TextStyle(
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Bold,
         fontSize = 16.sp,
         fontFamily = montserratFamily,
     ),

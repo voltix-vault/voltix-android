@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intro_1">
+        Welcome to Voltix!
+Experience unparalleled security with our two-factor authentication and trusted device integration. Your assets are fully self-custodial, ensuring complete control and peace of mind.
+    </string>
+    <string name="intro_2">
+        We don\'t track your activities or require any registrations. Your anonymity is safeguarded as our platform is fully open-source, ensuring transparency and trust.
+    </string>
+    <string name="intro_3">
+        Voltix is audited and proven secure. Join thousands of users who trust us with their digital assets. Get started now and embrace the future of secure cryptocurrency storage with Voltix.
+    </string>
+    <string name="keygen_qr">
+        Keep all devices on same WiFi with Voltix App open. (May not work on hotel/airport WiFi)
+    </string>
+</resources>

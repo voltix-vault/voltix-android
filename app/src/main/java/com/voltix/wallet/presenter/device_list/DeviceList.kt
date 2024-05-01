@@ -1,4 +1,4 @@
-package com.voltix.wallet.presenter.keygen
+package com.voltix.wallet.presenter.device_list
 
 import MultiColorButton
 import androidx.compose.foundation.background
@@ -13,6 +13,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -21,8 +23,8 @@ import com.voltix.wallet.app.ui.theme.appColor
 import com.voltix.wallet.app.ui.theme.dimens
 import com.voltix.wallet.app.ui.theme.menloFamily
 import com.voltix.wallet.app.ui.theme.montserratFamily
-import com.voltix.wallet.presenter.common.TopBar
-import com.voltix.wallet.presenter.keygen.components.DeviceInfoItem
+import com.voltix.wallet.presenter.base_components.tabbars.common.TopBar
+import com.voltix.wallet.presenter.device_list.components.DeviceInfoItem
 import com.voltix.wallet.presenter.navigation.Screen
 
 @Composable
@@ -38,16 +40,9 @@ fun DeviceList(navController: NavHostController, itemCount: Int = 4) {
         horizontalAlignment = CenterHorizontally,
         modifier = Modifier
             .background(MaterialTheme.appColor.oxfordBlue800)
-            .padding(
-                vertical = MaterialTheme.dimens.marginMedium,
-                horizontal = MaterialTheme.dimens.marginSmall
-            )
+            .padding( MaterialTheme.dimens.marginMedium)
     ) {
-        TopBar(
-            centerText = "Keygen",
-            startIcon = R.drawable.caret_left,
-            navController = navController
-        )
+        TopBar(centerText = "Summery", startIcon = R.drawable.caret_left, navController = navController)
 
         Spacer(modifier = Modifier.height(MaterialTheme.dimens.medium2))
 
@@ -74,16 +69,18 @@ fun DeviceList(navController: NavHostController, itemCount: Int = 4) {
             }
         }
 
-        Spacer(modifier = Modifier.height(MaterialTheme.dimens.medium1))
+        Spacer(modifier = Modifier.height(MaterialTheme.dimens.small3))
 
         Text(
-            style = MaterialTheme.menloFamily.bodyMedium,
+            modifier = Modifier.fillMaxWidth(),
+            style = MaterialTheme.menloFamily.titleLarge.copy(textAlign = TextAlign.Start),
             text = "You can only send transactions with these two devices present.",
             color = textColor
         )
         Spacer(modifier = Modifier.height(MaterialTheme.dimens.small3))
         Text(
-            style = MaterialTheme.menloFamily.bodyMedium,
+            modifier = Modifier.fillMaxWidth(),
+            style = MaterialTheme.menloFamily.titleLarge.copy(textAlign = TextAlign.Start),
             text = "You do not have a 3rd backup device - so you should backup one vault share securely later.",
             color = textColor
         )
@@ -92,7 +89,7 @@ fun DeviceList(navController: NavHostController, itemCount: Int = 4) {
         Spacer(modifier = Modifier.weight(1.0f))
 
         MultiColorButton(
-            text = "Continue",
+            text = stringResource(R.string.continue_res),
             backgroundColor = MaterialTheme.appColor.turquoise600Main,
             textColor = MaterialTheme.appColor.oxfordBlue600Main,
             minHeight = MaterialTheme.dimens.minHeightButton,
@@ -100,9 +97,8 @@ fun DeviceList(navController: NavHostController, itemCount: Int = 4) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
-                    start = MaterialTheme.dimens.marginMedium,
-                    end = MaterialTheme.dimens.marginMedium,
-                    bottom = MaterialTheme.dimens.marginMedium,
+                    start = MaterialTheme.dimens.buttonMargin,
+                    end = MaterialTheme.dimens.buttonMargin
                 )
         ) {
             if (itemCount + 1 <= 4) {
@@ -117,6 +113,10 @@ fun DeviceList(navController: NavHostController, itemCount: Int = 4) {
                 )
             }
         }
+        Spacer(
+            modifier = Modifier
+                .height(MaterialTheme.dimens.marginMedium)
+        )
 //        Button(onClick = {
 //            if (itemCount + 1 <= 4) {
 //                navController.navigate(

@@ -1,4 +1,4 @@
-package com.voltix.wallet.presenter.keygen
+package com.voltix.wallet.presenter.generating_key_gen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,7 +24,7 @@ import com.voltix.wallet.R
 import com.voltix.wallet.app.ui.theme.appColor
 import com.voltix.wallet.app.ui.theme.dimens
 import com.voltix.wallet.app.ui.theme.menloFamily
-import com.voltix.wallet.presenter.common.TopBar
+import com.voltix.wallet.presenter.base_components.tabbars.common.TopBar
 
 @Composable
 fun GeneratingKeyGen(navController: NavHostController) {
@@ -33,10 +33,8 @@ fun GeneratingKeyGen(navController: NavHostController) {
         horizontalAlignment = CenterHorizontally,
         modifier = Modifier
             .background(MaterialTheme.appColor.oxfordBlue800)
-            .padding(
-                vertical = MaterialTheme.dimens.marginMedium,
-                horizontal = MaterialTheme.dimens.marginSmall
-            )
+            .padding(vertical = MaterialTheme.dimens.marginMedium,
+                horizontal = MaterialTheme.dimens.marginSmall)
     ) {
         TopBar(centerText = "Keygen", navController = navController)
 
@@ -70,7 +68,6 @@ fun GeneratingKeyGen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(MaterialTheme.dimens.medium1))
     }
 }
-
 @Preview(showBackground = true)
 @Composable
 fun GeneratingKeyGenPreview() {

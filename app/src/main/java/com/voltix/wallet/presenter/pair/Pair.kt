@@ -36,16 +36,15 @@ fun Pair(navController: NavHostController) {
         horizontalAlignment = CenterHorizontally,
         modifier = Modifier.run {
             background(MaterialTheme.appColor.oxfordBlue800)
-                .padding(
-                    vertical = MaterialTheme.dimens.marginMedium,
-                    horizontal = MaterialTheme.dimens.marginSmall
+                .padding(top =  MaterialTheme.dimens.marginMedium
                 )
         }
     ) {
-        TopBar(
-            centerText = "Pair",
+        TopBar(centerText = "Pair",
             startIcon = R.drawable.caret_left,
-            navController = navController
+            navController = navController,
+            modifier = Modifier.padding(horizontal =  MaterialTheme.dimens.marginMedium
+            )
         )
 
         Spacer(modifier = Modifier.height(MaterialTheme.dimens.medium1))

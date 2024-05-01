@@ -12,5 +12,6 @@ sealed class Screen(val route: String) {
     data object Pair : Screen(route = "pair")
     data object GeneratingKeyGen : Screen(route = "generating_key_gen")
     data object SigningError : Screen(route = "signing_error")
+    data object VaultListAndDetailsList : Screen(route = "vault_list_and_details_list")
 
 }

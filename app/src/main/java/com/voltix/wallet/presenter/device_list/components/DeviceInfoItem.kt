@@ -1,4 +1,4 @@
-package com.voltix.wallet.presenter.keygen.components
+package com.voltix.wallet.presenter.device_list.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.voltix.wallet.app.ui.theme.appColor
 import com.voltix.wallet.app.ui.theme.dimens
 import com.voltix.wallet.app.ui.theme.menloFamily
+
 
 @Composable
 fun DeviceInfoItem(info: String) {

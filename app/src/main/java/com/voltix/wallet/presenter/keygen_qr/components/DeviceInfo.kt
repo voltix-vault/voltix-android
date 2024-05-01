@@ -1,4 +1,4 @@
-package com.voltix.wallet.presenter.keygen.components
+package com.voltix.wallet.presenter.keygen_qr.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,7 +25,7 @@ import com.voltix.wallet.app.ui.theme.montserratFamily
 
 
 @Composable
-fun DeviceInfo(@DrawableRes icon: Int, name: String, isSelected: Boolean,onItemSelected:(Boolean)->Unit) {
+fun DeviceInfo(@DrawableRes icon: Int, name: String, info: String) {
     val textColor = MaterialTheme.appColor.neutral0
     Column(
         modifier = Modifier
@@ -38,16 +37,15 @@ fun DeviceInfo(@DrawableRes icon: Int, name: String, isSelected: Boolean,onItemS
 
         horizontalAlignment = CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(id = icon),
-            contentDescription = null,
-            modifier = Modifier.height(100.dp)
-        )
+        Image(painter = painterResource(id = icon), contentDescription = null, modifier = Modifier.height(100.dp))
         Spacer(modifier = Modifier.height(MaterialTheme.dimens.small1))
         Text(
             text = name, color = textColor, style = MaterialTheme.montserratFamily.titleMedium
         )
-        Checkbox(checked= isSelected, onCheckedChange = onItemSelected)
+        Spacer(modifier = Modifier.height(MaterialTheme.dimens.small1))
+        Text(
+            text = info, color = textColor, style = MaterialTheme.montserratFamily.titleSmall
+        )
     }
 }
 
@@ -55,6 +53,6 @@ fun DeviceInfo(@DrawableRes icon: Int, name: String, isSelected: Boolean,onItemS
 @Composable
 fun DeviceInfoPreview() {
     val navController = rememberNavController()
-    DeviceInfo(R.drawable.ipad, "iPad", true,onItemSelected = {  })
+    DeviceInfo( R.drawable.ipad, "iPad", "1234h2i34h")
 
 }

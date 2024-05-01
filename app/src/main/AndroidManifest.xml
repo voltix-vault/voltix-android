@@ -19,6 +19,11 @@
         android:theme="@style/Theme.Voltix"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presenter.home.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Voltix" />
+        <activity
             android:name=".app.activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Voltix">

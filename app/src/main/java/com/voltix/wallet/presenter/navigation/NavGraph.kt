@@ -5,15 +5,15 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.voltix.wallet.models.Vault
-import com.voltix.wallet.presenter.keygen.CreateNewVault
-import com.voltix.wallet.presenter.keygen.DeviceList
-import com.voltix.wallet.presenter.keygen.GeneratingKeyGen
+import com.voltix.wallet.presenter.create_new_vault.CreateNewVault
+import com.voltix.wallet.presenter.device_list.DeviceList
+import com.voltix.wallet.presenter.generating_key_gen.GeneratingKeyGen
 import com.voltix.wallet.presenter.home.HomeScreen
 import com.voltix.wallet.presenter.import_file.ImportFile
-import com.voltix.wallet.presenter.keygen.KeygenPeerDiscovery
-import com.voltix.wallet.presenter.keygen.Setup
+import com.voltix.wallet.presenter.keygen_qr.KeygenQr
+import com.voltix.wallet.presenter.list_of_vault_and_details_list.VaultListAndDetailsList
 import com.voltix.wallet.presenter.pair.Pair
+import com.voltix.wallet.presenter.setup.Setup
 import com.voltix.wallet.presenter.signing_error.SigningError
 import com.voltix.wallet.presenter.welcome.WelcomeScreen
 

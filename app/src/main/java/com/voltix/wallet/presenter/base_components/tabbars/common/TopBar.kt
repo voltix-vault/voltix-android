@@ -1,4 +1,4 @@
-package com.voltix.wallet.presenter.common
+package com.voltix.wallet.presenter.base_components.tabbars.common
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -33,12 +33,9 @@ fun TopBar(
         verticalAlignment = CenterVertically
     ) {
         startIcon?.let { id ->
-            Image(
-                painter = painterResource(id = id),
-                contentDescription = null,
-                modifier = Modifier.clickable {
-                    navController.popBackStack()
-                })
+            Image(painter = painterResource(id = id), contentDescription = null,modifier = Modifier.clickable {
+                navController.popBackStack()
+            })
         } ?: Spacer(modifier = Modifier)
         Text(
             text = centerText,
@@ -46,11 +43,7 @@ fun TopBar(
             style = MaterialTheme.montserratFamily.headlineMedium.copy(fontSize = MaterialTheme.dimens.medium1.value.sp)
         )
         endIcon?.let { id ->
-            Image(painter = painterResource(id = id),
-                contentDescription = null,
-                modifier = Modifier.clickable {
-                navController.popBackStack()
-            })
+            Image(painter = painterResource(id = id), contentDescription = null)
         } ?: Spacer(modifier = Modifier)
     }
 }
